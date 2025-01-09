@@ -1,0 +1,311 @@
+.histoire img{
+    width: 200px;
+    border-radius: 15px;
+}
+#family img{
+    float: right;
+    margin-top: -25px;
+    margin-left: 20px;
+}
+#tuteur img{
+    float: left;    
+    margin-top: -20px;
+    margin-right: 20px;
+}
+.histoire {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+.histoire h2 {
+    color: #03559E;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+section p {
+    font-size: 1.2em;
+    letter-spacing: 2px;
+    line-height: 1.6;
+    color: #333;
+    text-align: justify;
+    margin-bottom: 40px;
+}
+
+section p:first-child {
+    font-weight: normal;
+}
+
+section p:not(:first-child) {
+    margin-top: 20px;
+}
+
+/* Hero spécifique à la page histoire */
+.histoire-hero {
+    background: linear-gradient(rgba(37, 99, 235, 0.9), rgba(30, 64, 175, 0.9)),
+                url('../img/history-bg.jpg') center/cover;
+    padding: 2rem 1rem;
+    margin-top: 90px;
+}
+
+/* Timeline */
+.timeline-section {
+    padding: var(--spacing-xl) var(--spacing-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-xl) 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background: var(--primary-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: var(--border-radius);
+    z-index: 1;
+}
+
+.timeline-item {
+    padding: var(--spacing-lg) 0;
+    width: 50%;
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+    padding-right: var(--spacing-xl);
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    margin-left: 50%;
+    padding-left: var(--spacing-xl);
+}
+
+.timeline-content {
+    background: var(--surface-color);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+    backdrop-filter: blur(8px);
+}
+
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    top: 50%;
+    z-index: 3;
+}
+
+.timeline-item:nth-child(odd) .timeline-content::before {
+    right: -60px;
+    transform: translateY(-50%);
+}
+
+.timeline-item:nth-child(even) .timeline-content::before {
+    left: -60px;
+    transform: translateY(-50%);
+}
+
+.timeline-content .date {
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: var(--primary-color);
+    color: white;
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 500;
+}
+
+.timeline-content h3 {
+    color: var(--text-color);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.5rem;
+}
+
+.timeline-content p {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.timeline-content img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    margin-top: var(--spacing-md);
+}
+
+/* Mission Cards */
+.mission-section {
+    padding: var(--spacing-xl) var(--spacing-lg);
+    background-color: var(--gray-100);
+}
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mission-card {
+    background: var(--surface-color);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.mission-card:hover {
+    transform: translateY(-5px);
+}
+
+.mission-card .icon {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.mission-card h3 {
+    color: var(--text-color);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.25rem;
+}
+
+.mission-card p {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .timeline::before {
+        display: none;
+    }
+
+    .timeline-item {
+        width: calc(100% - 60px);
+        padding: var(--spacing-md) 0;
+        margin: 0 0 var(--spacing-xl) 0;
+        position: relative;
+    }
+
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        padding: var(--spacing-md) 0;
+        margin: 0 0 var(--spacing-xl) 0;
+        text-align: left;
+        padding-right: 60px;
+    }
+
+    /* Barre verticale pour chaque item */
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        width: 3px;
+        height: 100%;
+        background: var(--primary-color);
+        right: 20px;
+        top: 0;
+    }
+
+    /* Point au milieu de la barre */
+    .timeline-item::after {
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        background: var(--primary-color);
+        border: 3px solid var(--background-color);
+        border-radius: 50%;
+        right: 13px; /* (40px - 16px) / 2 */
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+    }
+
+    .timeline-content {
+        max-width: 100%;
+        margin: 0;
+        font-size: 0.9rem;
+        background: rgba(var(--gray-100-rgb), 0.95);
+        position: relative;
+        z-index: 1;
+    }
+
+    .timeline-content::before {
+        display: none;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .mission-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Ajustement du hero pour le header */
+    .histoire-hero {
+        padding: var(--spacing-xl) var(--spacing-lg);
+        margin-top: 120px;
+    }
+}
+
+/* Animation de fondu */
+[data-aos] {
+    opacity: 0;
+    transition-property: opacity, transform;
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+}
+
+/* Support du mode sombre */
+:root {
+    --gray-100-rgb: 243, 244, 246;
+}
+
+[data-theme="dark"] {
+    --gray-100-rgb: 31, 41, 55;
+}
+
+[data-theme="dark"] .timeline-content,
+[data-theme="dark"] .mission-card {
+    background: var(--surface-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .timeline-content h3,
+[data-theme="dark"] .mission-card h3 {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .timeline-content p,
+[data-theme="dark"] .mission-card p {
+    color: var(--text-color-light);
+}
+
+[data-theme="dark"] .date {
+    background: var(--primary-color);
+    color: white;
+}
