@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez AudioJDR, une application Windows rendant les jeux de rôle textuels accessibles aux personnes déficientes visuelles.">
+    <title>AudioJDR - Talc Mexicain</title>
+    <script src="../../js/theme-init.js"></script>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/project.css">
+    <link rel="stylesheet" href="../../css/animations.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .project-details {
+            max-width: 75%;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+        .project-section {
+            margin-bottom: 2.5rem;
+        }
+        .carousel {
+            position: relative;
+            max-width: 800px;
+            height: 450px;
+            margin: 2rem auto;
+            overflow: hidden;
+        }
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 100%;
+        }
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+            height: 100%;
+        }
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: var(--bg-secondary);
+            padding: 1rem;
+        }
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 1rem;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 10;
+            transition: background-color 0.3s;
+        }
+        .carousel-button:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+        .carousel-button.prev {
+            left: 1rem;
+        }
+        .carousel-button.next {
+            right: 1rem;
+        }
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+            gap: 0.5rem;
+        }
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ccc;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+        }
+        .carousel-dot.active {
+            background: var(--primary-color);
+        }
+        .team-section {
+            background-color: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+        .team-logo {
+            max-width: 150px;
+            margin: 0 auto 1.5rem;
+            display: block;
+        }
+        .team-members {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        .team-member {
+            padding: 1rem;
+            background: var(--surface-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header role="banner">
+        <div class="logo">
+            <a href="../../index.html" aria-label="Accueil Talc Mexicain">
+                <img src="../../img/logo.png" alt="Logo Talc Mexicain" width="150" height="50">
+            </a>
+        </div>
+        <nav role="navigation" aria-label="Navigation principale">            
+            <ul class="menu-ordi">
+                <li><a href="../../index.html">Accueil</a></li>
+                <li><a href="../../histoire.html">Histoire</a></li>
+                <li><a href="../../project.html">Projets</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main role="main">
+        <section class="hero project-hero" aria-labelledby="hero-title">
+            <h1 id="hero-title" class="hero-title">AudioJDR</h1>
+            <p class="hero-subtitle">Une application accessible pour les jeux de rôle textuels</p>
+        </section>
+
+        <div class="project-details">
+            <section class="project-section" aria-labelledby="description-title">
+                <h2 id="description-title">Description du Projet</h2>
+                <p>AudioJDR est une application Windows innovante conçue pour rendre les jeux de rôle textuels accessibles aux personnes déficientes visuelles. Grâce à la synthèse et à la reconnaissance vocale, les joueurs peuvent interagir avec le jeu uniquement par la voix, sans nécessiter d'interface graphique.</p>
+            </section>
+
+            <section class="project-section" aria-labelledby="features-title">
+                <h2 id="features-title">Fonctionnalités Principales</h2>
+                <div class="features-grid">
+                    <div>
+                        <h3>Partie Joueur</h3>
+                        <ul>
+                            <li>Synthèse vocale pour la lecture des descriptions</li>
+                            <li>Reconnaissance vocale pour les interactions</li>
+                            <li>Sauvegarde automatique des parties</li>
+                            <li>Support multilingue</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Partie Éditeur</h3>
+                        <ul>
+                            <li>Création de jeux audio interactifs</li>
+                            <li>Interface intuitive de conception</li>
+                            <li>Import/Export au format JSON</li>
+                            <li>Gestion avancée des événements</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="project-section" aria-labelledby="process-title">
+                <h2 id="process-title">Notre Processus de Développement</h2>
+                <div class="carousel" aria-label="Galerie du projet">
+                    <button class="carousel-button prev" aria-label="Image précédente">&#10094;</button>
+                    <button class="carousel-button next" aria-label="Image suivante">&#10095;</button>
+                    <div class="carousel-container">
+                        <div class="carousel-slide">
+                            <img src="maquette-createEvent-audiojdr.png" alt="Maquette de l'interface de création d'événements">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="accueil-audiojdr.png" alt="Page d'accueil d'AudioJDR">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="storymap-audiojdr.png" alt="Carte des histoires AudioJDR">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="storycontent-audiojdr.png" alt="Contenu d'une histoire AudioJDR">
+                        </div>
+                    </div>
+                    <div class="carousel-dots" role="tablist">
+                        <button class="carousel-dot active" role="tab" aria-selected="true" aria-label="Image 1"></button>
+                        <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Image 2"></button>
+                        <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Image 3"></button>
+                        <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Image 4"></button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="team-section" aria-labelledby="team-title">
+                <h2 id="team-title">L'Équipe TalcColombien</h2>
+                <img src="logo-TC.png" alt="Logo TalcColombien" class="team-logo">
+                <div class="team-members">
+                    <div class="team-member">
+                        <h3>Baptiste Rolland</h3>
+                        <p>Développeur</p>
+                    </div>
+                    <div class="team-member">
+                        <h3>Aaron Gritti</h3>
+                        <p>Développeur</p>
+                    </div>
+                    <div class="team-member">
+                        <h3>Dorian Vivot</h3>
+                        <p>Développeur</p>
+                    </div>
+                    <div class="team-member">
+                        <h3>Zafer Yilmaz</h3>
+                        <p>Développeur</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2024 Talc Mexicain. Tous droits réservés.</p>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+    <script src="../../js/scroll-animations.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.querySelector('.carousel');
+            const container = carousel.querySelector('.carousel-container');
+            const slides = carousel.querySelectorAll('.carousel-slide');
+            const dots = carousel.querySelectorAll('.carousel-dot');
+            const prevButton = carousel.querySelector('.prev');
+            const nextButton = carousel.querySelector('.next');
+            let currentIndex = 0;
+
+            function updateCarousel() {
+                container.style.transform = `translateX(-${currentIndex * 100}%)`;
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
+                    dot.setAttribute('aria-selected', index === currentIndex);
+                });
+            }
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateCarousel();
+            }
+
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                updateCarousel();
+            }
+
+            prevButton.addEventListener('click', prevSlide);
+            nextButton.addEventListener('click', nextSlide);
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentIndex = index;
+                    updateCarousel();
+                });
+            });
+
+            // Gestion du clavier pour l'accessibilité
+            carousel.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') prevSlide();
+                if (e.key === 'ArrowRight') nextSlide();
+            });
+        });
+    </script>
+</body>
+</html>
